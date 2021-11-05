@@ -39,6 +39,7 @@
 
 body {
     max-width: 1440px;
+    margin: 0 auto;
 }
 
 h1, h2, h3, h4, h5, h6, p, a {
@@ -199,6 +200,45 @@ nav a {
     font-size: var(--unnamed-font-size-18);
     width: 60%;
     margin: 0 auto !important;
+}
+
+.l_more {
+    background-color: #fff;
+    opacity: 0.7;
+    position: absolute;
+    padding: 10px 30px;
+    border-radius: 50px;
+    bottom: 14%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.l_more  a {
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.dots {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.dots>.active {
+    background-color: var(--unnamed-color-de105d);
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 3px;
+    margin-right: 3px;
 }
 /* HERO END */
 
