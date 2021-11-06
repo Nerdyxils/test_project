@@ -239,6 +239,10 @@ nav a {
     font-weight: 900;
 }
 
+.mobile_active {
+    display: none;
+}
+
 .head_o_txt p {
     line-height: 2.0em;
     text-align: center;
@@ -562,10 +566,6 @@ nav a {
         display: none;
     }
 
-    .overfloat_text .active {
-        display: block;
-    }
-
 
     .head_o_txt {
         position: relative;
@@ -581,5 +581,15 @@ nav a {
 
     .l_more {
         max-width: 70%;
+    }
+
+    .head_o_txt p {
+        width: 90%;
+    }
+    .mobile_active {
+        display: block;
+        margin: -30px auto 0 auto;
+        font-size: var(--unnamed-font-size-90);
+        font-weight: 900;
     }
 }
