@@ -77,6 +77,10 @@ a {
     margin: 0 auto;
 }
 
+main {
+    position: relative;
+}
+
 /* HERO START */
 .header_main {
     background-image: linear-gradient(to bottom, rgba(0,0,0,0.30) 0%,rgba(0,0,0,0.30) 100%), url(../images/hero.png);
@@ -84,8 +88,15 @@ a {
     background-size: cover;
     position: relative;
     width: 100%;
-    height: 100vh;
+    min-height: 800px;
+    height: 800px;
+
+    max-height: 1200px;
     color: var(--unnamed-color-ffffff);
+}
+
+.nav_main {
+    position: relative;
 }
 
 .main_nav {
@@ -123,8 +134,47 @@ nav a {
     font-size: var(--unnamed-font-size-14);
 }
 
+.list_items a::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #00e6e4;
+    position: absolute;
+    left: 0px;
+    bottom: -3px;
+    transform-origin: left;
+    transform: scale(0);
+    transition: 0.25s linear;
+}
+
+.list_items a:hover:before {
+    transform: scale(1);
+}
+
 .list_item i {
     margin-left: 5px;
+}
+
+.show, .hide {
+    display: none;
+    padding-left: 15px;
+    font-size: 1.5rem;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center left;
+    color: #fff;
+}
+
+.main_body_content {
+    position: relative;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.powered_parent {
+    position: relative;
+    margin-bottom: 30px;
 }
 
 .powered_img {
@@ -132,8 +182,9 @@ nav a {
     padding: 10px 80px;
     background-color: yellowgreen;
     position: absolute;
-    top: 30%;
-    left: 38%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .powered_img:before {
@@ -157,11 +208,11 @@ nav a {
 .overfloat_text {
     /* margin-top: -30px; */
     
-    position: absolute;
+    /* position: absolute;
     top: 50%;
-    left: 50%;
+    left: 50%; */
     width: 100%;
-    transform: translate(-50%, -50%);
+    /* transform: translate(-50%, -50%); */
     height: auto;
 }
 
@@ -189,28 +240,21 @@ nav a {
 }
 
 .head_o_txt p {
-    position: absolute;
-    bottom: 19%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    line-height: 2.5em;
+    line-height: 2.0em;
     text-align: center;
     justify-content: center;
     align-self: center;
     font-size: var(--unnamed-font-size-18);
-    width: 60%;
-    margin: 0 auto !important;
+    width: 50%;
+    margin: 30px auto 0 auto;
 }
 
 .l_more {
     background-color: #fff;
     opacity: 0.7;
-    position: absolute;
-    padding: 10px 30px;
+    margin: 30px auto 0 auto;
+    padding: 10px 20px;
     border-radius: 50px;
-    bottom: 14%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 .l_more  a {
@@ -437,6 +481,10 @@ nav a {
 }
 
 @media (max-width: 800px) {
+    .divider {
+        display: none;
+    }
+
     .text {
         padding: 5px 20px;
     }
@@ -449,5 +497,97 @@ nav a {
         display: flex;
         flex-direction: column;
     }
+
+    .m_nav {
+        display: relative;
+        margin: 0 auto;
+    }
+
+    .nav {
+        position: absolute;
+        background-color: var(--unnamed-color-de105d);
+        color: #fff;
+        z-index: 1;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 0;
+        padding-right: 0;
+        right: 0;
+    }
+
+    .list_items {
+      display: none; 
+      width: 100%;
+      height: 100vh;
+      margin: 0 auto;
+    }
+
+    .list_items li {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      margin-top: 10px;
+      line-height: 50px;
+    }
+
+    .show, .hide {  
+        position: absolute;
+        top: 20px;
+        right: 0;
+    }
+  
+    .show {
+        display: inline-block;
+    }
+  
+    .hide {
+        display: none;
+    }
+  
+    .nav:target .show {
+        display: none;
+    }
+  
+    #nav:target .hide, #nav:target .list_items {
+        display: block;
+    }
     
+    /* .powered_img {
+        position: absolute;
+        width: 50%;
+    }
+
+    .overfloat_text  {
+        position: absolute;
+    }
+
+    .head_o_txt {
+        position: absolute;
+    }
+
+    .l_more {
+        position: absolute;
+    }
+
+    .dots {
+        position: absolute;
+    } */
+}
+
+@media (max-width: 600px) {
+    .overfloat_text {
+        display: none;
+    }
+
+    .head_o_txt {
+        position: relative;
+        text-align: center;
+    }
+
+    .powered_img {
+        position: relative;
+        text-align: center;
+        justify-content: center;
+    }
 }
